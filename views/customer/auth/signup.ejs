@@ -6,7 +6,7 @@
   <%- include('../includes/header.ejs') %> 
   <main>
     <h1>Create New Account</h1>
-    <form action="" method="" class="form">
+    <form action="/signup" method="POST" class="form">
 
         <p>
           <label for="email">E-mail</label>
@@ -35,7 +35,7 @@
         </p>
         <p>
           <label for="city">City</label>
-          <input type="text" id="city" name="city" placeholder="Barcelona" required>
+          <input type="text" id="city" name="city" placeholder="Miami" required>
         </p>
         <button class="btn">Create Account</button>
         <p><a href="/login">Login instead</a></p>
