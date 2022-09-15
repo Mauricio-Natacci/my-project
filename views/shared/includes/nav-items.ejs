@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/styles/nav-items.css">
+
+<nav>
+  <ul class="nav__links">
+    <% if (locals.isAuth) { %>
+        <li>
+          <form action="/logout" method="POST" >
+            <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>" />
+            <button class="logout-btn">Logout</button>
+          </form>
+        </li>
+        <% } %>
+        <% if (!locals.isAuth) { %>
+          <li><a href="/signup">Signup</a></li>
+          <li><a href="/login">Login</a></li>
+        <% } %>
+  </ul>
+
+
+  </nav>
