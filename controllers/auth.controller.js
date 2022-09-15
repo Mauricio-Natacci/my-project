@@ -1,7 +1,5 @@
-const db = require('../data/database');
-const User = require('../models/user.model');
-const bcrypt = require('bcryptjs');
-
+const User = require('../models/user.model')
+const authUtil = require('../util/authentication')
 
 function getSignup(req, res) {
   res.render('customer/auth/signup');
@@ -51,19 +49,21 @@ async function login(req, res, next) {
     return;
   }
 
-  res.redirect('/login');
-  console.log('you are logged!')
-  console.log(existingUser.email) 
+  authUtil.createUserSession(req, existingUser, function () {
+    console.log('you are logged!')
+    res.redirect('/login')
+  })
 
-
-
-
-
+}
+function logout(req, res) {
+  authUtil.destroyUserAuthSession(req)
+  res.redirect('/login')
 }
 
 module.exports = {
   getSignup: getSignup,
   getLogin: getLogin,
   signup: signup,
-  login: login
+  login: login,
+  logout: logout
 };
