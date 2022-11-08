@@ -1,4 +1,14 @@
-<header>
-  <div class="header"> <a href="/">WDE</a></div>
-  <%- include('../../shared/includes/nav-items.ejs') %> 
+<header id="main-header">
+  <div class="header" id="logo"> <a href="/">WDE</a></div>
+  <%- include('nav-items') %>
+   <button id="mobile-menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+   </button>
 </header>
+<aside id="mobile-menu">
+  <nav>
+    <%- include('nav-items') %>
+  </nav>
+</aside>
