@@ -10,6 +10,12 @@ class Product {
     this.imagePath = `product-data/images/${productData.image}`
     this.imageUrl = `/products/assets/images/${productData.image}`
   }
+  
+    static async showTitle() {
+      const title = await db.getDb().collection('products').find().toArray()
+        return title
+
+    }
 
   async save() {
     const productData = {
@@ -22,6 +28,7 @@ class Product {
     }
     await db.getDb().collection('products').insertOne(productData)
   }
+
 }
 
 module.exports = Product;
