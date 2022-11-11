@@ -14,7 +14,6 @@ class Product {
     static async showTitle() {
       const title = await db.getDb().collection('products').find().toArray()
         return title
-
     }
 
   async save() {
