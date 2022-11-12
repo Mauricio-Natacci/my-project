@@ -2,9 +2,8 @@ const Product = require('../models/product.model')
 
 async function getProducts(req, res, next) {
   try {
-    const title = await Product.showTitle()
-    console.log('testing', title)
-    res.render('customer/products/all-products', {title})
+    const products = await Product.showProducts()
+    res.render('customer/products/all-products', {products})
   } catch(error) {
     next(error)
     return

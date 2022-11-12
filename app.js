@@ -12,7 +12,8 @@ const checkAuthStatusMiddleware = require('./middlewares/check-auth')
 const authRoutes = require('./routes/auth.routes');
 const productsRoutes = require('./routes/products.routes')
 const baseRoutes = require('./routes/base.routes');
-const adminRoutes = require('./routes/admin.routes')
+const adminRoutes = require('./routes/admin.routes');
+const { ppid } = require('process');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static('public'));
+app.use('/products/assets',express.static('product-data'))
 app.use(express.urlencoded({ extended: false }))
 
 const sessionConfig = createSessionConfig()

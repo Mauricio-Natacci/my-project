@@ -95,3 +95,7 @@ a {
 .alert p {
   margin: var(--space-2) 0;
 }
+
+li {
+  list-style-type: none;
+}
