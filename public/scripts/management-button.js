@@ -1,4 +1,4 @@
-const selectDeleteButtons = document.querySelectorAll('.product-item button');
+const selectDeleteButtons = document.querySelectorAll('.product-item .button-delete');
 
 async function deleteItem(event) {
   const button = event.target;
@@ -9,10 +9,7 @@ async function deleteItem(event) {
     method: 'DELETE'
   });
 
-
   button.parentElement.parentElement.parentElement.parentElement.remove();
-
-
 }
 
 for (const selectDeleteButton of selectDeleteButtons) {

@@ -5,7 +5,7 @@
     <% if (!locals.isAdmin) { %>
 
       <li><a href="/">Shop</a></li>
-      <li><a href="/cart">Cart</a></li>
+      <li><a href="/items">Cart<span><%= locals.count %> </span></a></li>
    
       <% } %> 
     
@@ -14,6 +14,7 @@
     <% } %>
     
     <% if (locals.isAdmin) { %>
+      <li><a href="/items">Cart</a></li>
        <li><a href="/admin/products">Manage Products</a></li>
        <li><a href="/admin/orders">Manage Orders</a></li>
     <% } %>
