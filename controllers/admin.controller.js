@@ -67,7 +67,7 @@ async function updateProduct(req, res, next) {
       return
     }
 
-    res.redirect('/admin/products')
+    res.json({message: 'item deleted!'})
 
   }
 

@@ -1,13 +1,15 @@
 <article class="product-item">
-  <div>
-    <h2><%= product.title %></h2>
-    <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+  <div class="container">
+    <h2 class="product-title"><%= product.title %></h2>
+    <img class="product-img" src="<%= product.imageUrl %>" alt="<%= product.title %>">
     <h2><%= product.summary %></h2>
-    <h2><%= product.price %></h2>
+    <h2 class="price"><%= product.price %></h2>
     <h2><%= product.description %></h2>
-    <div>
-      <a class="btn" href="/admin/products/<%=product.id %>">View Details</a>
-      <button class="btn">Delete</button>
-    </div>
+    <% if (locals.isAuth && locals.isAdmin) { %>
+      <div>
+        <a class="btn" href="/admin/products/<%=product.id %>">View Details</a>
+        <button class="btn btn-alt" data-productid="<%= product.id %>" data-csrf="<%= locals.csrfToken %>">Delete</button>
+      </div>
+    <% } %>
   </div>
 </article>
