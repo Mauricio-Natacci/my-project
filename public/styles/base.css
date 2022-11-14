@@ -64,6 +64,7 @@ a {
   color: var(--color-primary-400);
 }
 .btn {
+    cursor: pointer;
     background: #2c89bf;
     color: white;
     border-radius: 6px;
