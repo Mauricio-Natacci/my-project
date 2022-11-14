@@ -1,9 +1,9 @@
 <article class="product-item">
-  <div class="container">
+  <div>
     <h2 class="product-title"><%= product.title %></h2>
     <img class="product-img" src="<%= product.imageUrl %>" alt="<%= product.title %>">
     <h2><%= product.summary %></h2>
-    <h2 class="price"><%= product.price %></h2>
+    <h2 class="price">R$ <%= product.price %></h2>
     <h2><%= product.description %></h2>
     <% if (locals.isAuth && locals.isAdmin) { %>
       <div>
