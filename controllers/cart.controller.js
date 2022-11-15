@@ -1,15 +1,24 @@
-const cartController = require('./cart.controller')
 const Product = require('../models/product.model')
 
+async function addCartItem(req, res, next) {
+  let product
+  try {
+    product = await Product.findById(req.body.productId)
+  } catch(error) {
+    next(error)
+    return
+  }
+  const cart = res.locals.cart
+   
+  res.locals.cart.addItem(product)
+  req.session.cart = cart
 
-async function loadCartPage(req, res) {
-
-  // const product = await Product.findById(req.body.id)
-  // console.log(product)
-  let name = 'Mauricio'
-  res.render('customer/cart/items', {name})
+  res.status(201).json({
+    message: 'Cart updated!',
+    newTotalItems: cart.totalQuantity
+  })
 }
 
 module.exports = {
-  loadCartPage: loadCartPage
+  addCartItem: addCartItem
 }
