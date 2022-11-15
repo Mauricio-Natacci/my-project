@@ -1,5 +1,3 @@
-const Product = require('./product.model')
-
 class CartItem {
   constructor (items = []) {
     this.items = items   
