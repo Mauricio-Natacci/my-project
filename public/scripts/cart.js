@@ -1,12 +1,13 @@
 const cartButtons = document.querySelectorAll('.product-item .cart');
 
 function test(event) {
-  console.log(count)
-    count ++
-
+  const button = event.target;
+  const id = button.dataset.productid;
+  const csrfToken = button.dataset.csrf;
+  
+  console.log(id)
 
 }
-let count = 1
 
 for (const cartButton of cartButtons) {
   cartButton.addEventListener('click', test);
