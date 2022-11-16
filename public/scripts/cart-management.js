@@ -34,8 +34,6 @@ async function AddToCart(event) {
 
 
   cartBadgeElement.textContent = newTotalQuantity
-
-  console.log(productId)
 }
 
 for (const cartButton of cartButtons) {
