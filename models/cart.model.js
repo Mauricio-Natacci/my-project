@@ -27,7 +27,7 @@ class Cart {
 
     this.items.push(cartItem);
     this.totalQuantity++;
-    this.totalPrice.toFixed = this.totalPrice + product.price;
+    this.totalPrice = this.totalPrice + product.price;
   }
 }
 
