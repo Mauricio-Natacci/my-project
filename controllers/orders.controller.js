@@ -1,12 +1,12 @@
 const Order = require('../models/order.model')
 
 function getOrder(req, res) {
-  const order = 'Test'
-
-  res.render('customer/orders/all-orders', order)
+  res.render('customer/orders/all-orders')
 }
 
-function addOrder(req, res) {}
+function addOrder(req, res) {
+  res.render('customer/orders/all-orders')
+}
 
 module.exports = {
   getOrder: getOrder,

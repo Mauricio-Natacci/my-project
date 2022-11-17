@@ -12,7 +12,7 @@ class Order {
       id: this.status,
       status: this.status
     }
-    return db.getDb().collection('products').insertOne(orderData)
+    return db.getDb().collection('orders').insertOne(orderData)
   }
 }
 
