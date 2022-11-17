@@ -16,7 +16,11 @@
     <div id="cart-total">
       <p>Total:$<span id="final-price"><%= cart.totalPrice.toFixed(2)%></span></p>
 
-      <button class="btn">Buy Products</button>
+      <% if (locals.isAuth) { %>  
+          <button class="btn">Buy Products</button>
+      <% } else { %>
+        <p>Log in to proceed and purchase the items.</p>
+      <% } %>
     </div>
   </main>
 <%- include('../../shared/includes/footer') %>
