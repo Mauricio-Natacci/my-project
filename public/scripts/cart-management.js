@@ -26,6 +26,7 @@ async function AddToCart(event) {
 
   if (!response.ok) {
     alert('Something went wrong!')
+    return
   }
 
   const responseData = await response.json()
