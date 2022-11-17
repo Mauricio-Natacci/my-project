@@ -39,7 +39,6 @@ async function updateCartItem(event) {
 
   if (responseData.updatedCartData.updatedItemPrice === 0) {
     form.parentElement.parentElement.remove()
-    console.log(responseData)
   } else {
     const totalPriceElement = form.parentElement.querySelector(
       '.cart-item-total-price'
