@@ -1,0 +1,14 @@
+<article class="order-item">
+  
+  <section class="order-details">
+    <ul>
+      <% for (const item of order.productData.items) { %>
+        <li><%= item.product.title %> - $ <%= item.totalPrice.toFixed(2) %> ($ <%= item.product.price.toFixed(2) %> x <%= item.quantity %>)</li>
+      <% } %>
+    </ul>
+    <%= order.status %> 
+    <h2><span class="order-item-price">Total Price : $ <%= order.productData.totalPrice.toFixed(2) %></span> </h2>
+  </section>
+
+
+</article>
