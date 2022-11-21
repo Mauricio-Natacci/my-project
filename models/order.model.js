@@ -15,8 +15,8 @@ class Order {
     return new Order(
       orderDoc.productData,
       orderDoc.userData,
-      orderDoc.status,
-      orderDoc._id
+      orderDoc._id,
+      orderDoc.status
     );
   }
 
@@ -32,6 +32,17 @@ class Order {
       .getDb()
       .collection('orders')
       .find({ 'userData._id': uid })
+      .sort({ _id: -1 })
+      .toArray();
+
+    return this.transformOrderDocuments(orders);
+  }
+
+  static async findAll() {
+    const orders = await db
+      .getDb()
+      .collection('orders')
+      .find()
       .sort({ _id: -1 })
       .toArray();
 
