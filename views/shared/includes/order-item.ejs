@@ -11,4 +11,18 @@
   </section>
 
 
+  <% if (locals.isAdmin) { %>
+   <h1>Client: <%= order.userData.name %> </h1> 
+      <form>
+        <select name="status">
+          <option value="pending" <% if (order.status === 'pending') { %>selected<% } %>>PENDING</option>
+          <option value="fulfilled" <% if (order.status === 'fulfilled') { %>selected<% } %>>FULFILLED</option>
+          <option value="cancelled" <% if (order.status === 'cancelled') { %>selected<% } %>>CANCELLED</option>
+        </select>
+        <button class="btn">Update</button>
+      </form>
+
+  <% } %>
+
+
 </article>
