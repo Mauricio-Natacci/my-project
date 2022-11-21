@@ -5,7 +5,7 @@ async function getOrders(req, res) {
   try {
     const orders = await Order.findAllForUser(res.locals.uid);
     res.render('customer/orders/all-orders', {
-      orders: orders,
+      orders
     });
   } catch (error) {
     next(error);

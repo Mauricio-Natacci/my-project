@@ -24,16 +24,6 @@ class Order {
     return orderDocs.map(this.transformOrderDocument);
   }
 
-  static async findAll() {
-    const orders = await db
-      .getDb()
-      .collection('orders')
-      .find()
-      .sort({ _id: -1 })
-      .toArray();
-
-    return this.transformOrderDocuments(orders);
-  }
 
   static async findAllForUser(userId) {
     const uid = new mongodb.ObjectId(userId);
@@ -56,7 +46,7 @@ class Order {
 
     return this.transformOrderDocument(order);
   }
-  
+
   save() {
     if (this.id) {
 
