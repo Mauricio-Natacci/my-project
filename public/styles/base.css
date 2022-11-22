@@ -138,3 +138,16 @@ li {
   background-color: var(--color-primary-500);
   color: var(--color-primary-500-contrast);
 }
+
+.order-status {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(56, 22, 247)
+}
+
+.order-item {
+  background-color: rgb(229, 223, 223);
+  padding: 1rem;
+  border-radius: 10px;
+  color: black;
+}

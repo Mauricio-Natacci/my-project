@@ -60,7 +60,11 @@ class Order {
 
   save() {
     if (this.id) {
-
+      const orderId = new mongodb.ObjectId(this.id);
+      return db
+        .getDb()
+        .collection('orders')
+        .updateOne({ _id: orderId }, { $set: { status: this.status } });
     } else {
       const orderData = {
         userData: this.userData,
