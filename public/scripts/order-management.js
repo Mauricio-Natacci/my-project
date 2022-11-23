@@ -9,7 +9,6 @@ async function updateStatus(event) {
   const newStatus = formData.get('status');
   const orderId = formData.get('orderid');
   const csrfToken = formData.get('_csrf');
-  console.log(form)
 
   let response
 
@@ -39,7 +38,6 @@ async function updateStatus(event) {
   
   form.parentElement.parentElement.querySelector('.order-status').textContent =
   responseData.newStatus
-  
 
 }
 
