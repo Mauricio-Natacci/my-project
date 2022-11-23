@@ -9,6 +9,11 @@ async function deleteItem(event) {
     method: 'DELETE'
   });
 
+  if (!response.ok) {
+    alert('Something went wrong!')
+    return
+  }
+
   button.parentElement.parentElement.parentElement.parentElement.remove();
 }
 
