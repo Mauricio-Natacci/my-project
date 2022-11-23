@@ -35,6 +35,7 @@ class Order {
       .sort({ _id: -1 })
       .toArray();
 
+      console.log(orders)
     return this.transformOrderDocuments(orders);
   }
 
