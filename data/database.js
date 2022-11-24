@@ -2,11 +2,7 @@ const mongodb = require('mongodb');
 
 const MongoClient = mongodb.MongoClient;
 
-let mongodbUrl = 'mongodb://127.0.0.1:27017'
-
-if (process.env.MONGODB_URL) {
-  mongodbUrl = process.env.MONGODB_URL
-}
+let mongodbUrl = 'mongodb+srv://mauricio:herokupassword@cluster0.mosjsan.mongodb.net/?retryWrites=true&w=majority'
 
 let database;
 
