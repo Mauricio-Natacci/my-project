@@ -55,7 +55,7 @@ app.use(errorHandlerMiddleware)
 
 db.connectToDatabase()
   .then(function () {
-    app.listen(process.env.PORT || 3000)
+    app.listen(port)
   })
   .catch(function (error) {
     console.log('Failed to connect to the database!')
