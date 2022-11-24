@@ -18,8 +18,11 @@ const adminRoutes = require('./routes/admin.routes')
 const cartRoutes = require('./routes/cart.routes')
 const orderRoutes = require('./routes/orders.routes')
 
-let PORT = process.env.PORT || 3000
+let port = 3000
 
+if (process.env.PORT) {
+  port = process.env.PORT
+}
 
 const app = express()
 
@@ -52,7 +55,7 @@ app.use(errorHandlerMiddleware)
 
 db.connectToDatabase()
   .then(function () {
-    app.listen(PORT)
+    app.listen(port)
   })
   .catch(function (error) {
     console.log('Failed to connect to the database!')
