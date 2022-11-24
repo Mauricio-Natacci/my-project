@@ -1,3 +1,4 @@
+const config = require('../config')
 const expressSession = require('express-session')
 const mongoDbStore = require('connect-mongodb-session')
 
@@ -5,8 +6,8 @@ function createSessionStore() {
   const MongoDbStore = mongoDbStore(expressSession)
 
   const store = new MongoDbStore({
-    uri: 'mongodb://127.0.0.1:27017',
-    dataBaseName: 'online-shop',
+    uri: config.mongodbUrl,
+    dataBaseName: config.dbName,
     collection: 'sessions'
   })
   return store
