@@ -60,7 +60,6 @@ class Product {
       description: this.description,
       image: this.image
     }
-    console.log(productData)
 
     if (this.id) {
       const productId = new mongodb.ObjectId(this.id)
