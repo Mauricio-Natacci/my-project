@@ -6,11 +6,23 @@
     <h2 class="price">R$ <%= product.price %></h2>
     <h2><%= product.description %></h2>
     <% if (locals.isAuth && locals.isAdmin) { %>
-      <div>
-        <a class="btn" href="/admin/products/<%=product.id %>">View Details</a>
-        <button class="btn btn-alt button-delete" data-productid="<%= product.id %>" data-csrf="<%= locals.csrfToken %>">Delete</button>
-      </div>
-      <% } %>
-      <button class="btn cart" data-productid="<%= product.id %>" data-csrf="<%= locals.csrfToken %>">Add to cart</button>
+    <div>
+      <a class="btn" href="/admin/products/<%=product.id %>">View Details</a>
+      <button
+        class="btn btn-alt button-delete"
+        data-productid="<%= product.id %>"
+        data-csrf="<%= locals.csrfToken %>"
+      >
+        Delete
+      </button>
+    </div>
+    <% } %>
+    <button
+      class="btn cart"
+      data-productid="<%= product.id %>"
+      data-csrf="<%= locals.csrfToken %>"
+    >
+      Add to cart
+    </button>
   </div>
 </article>
