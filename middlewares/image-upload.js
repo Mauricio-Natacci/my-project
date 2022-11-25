@@ -12,7 +12,10 @@ const upload = multer({
     key: function (req, file, cb) {
       cb(null, uuid() + '-' + file.originalname)
     }
-  })
+  }),
+  limits: {
+    fileSize: 2 * 1024 * 1024
+  }
 })
 
 const configuredMulterMiddleware = upload.single('image')
