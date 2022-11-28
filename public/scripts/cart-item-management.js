@@ -40,7 +40,7 @@ async function updateCartItem(event) {
 
   if (responseData.updatedCartData.updatedItemPrice === 0) {
     form.parentElement.parentElement.remove()
-    buttonBuyProducts.style.display = 'none'
+    
   } else {
     const totalPriceElement = form.parentElement.querySelector(
       '.cart-item-total-price'
@@ -52,6 +52,13 @@ async function updateCartItem(event) {
   cartBadgeElement.textContent = responseData.updatedCartData.newTotalQuantity
   finalTotalPrice.textContent =
     responseData.updatedCartData.newTotalPrice.toFixed(2)
+
+
+  if (responseData.updatedCartData.newTotalPrice === 0) {
+    buttonBuyProducts.style.display = 'none'
+  }
+
+  
 }
 
 for (const updateButton of updateButtons) {
