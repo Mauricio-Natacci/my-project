@@ -25,6 +25,10 @@
 .product-item-content h2 {
   font-size: 1.15rem;
   margin: var(--space-2) 0;
+  height: 2rem;
+}
+.product-item-content .style-description {
+  margin-bottom: 3rem;
 }
 
 .product-item-actions {
@@ -35,3 +39,4 @@
   background-color: rgb(230, 64, 64);
   border: 1px solid rgb(213, 36, 36);
 }
+
