@@ -20,7 +20,7 @@ class Cart {
         this.items[i] = cartItem
 
         this.totalQuantity++
-        this.totalPrice = this.totalPrice + product.price
+        this.totalPrice = +this.totalPrice + product.price
         return
       }
     }

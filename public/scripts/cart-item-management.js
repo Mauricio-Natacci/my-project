@@ -54,7 +54,7 @@ async function updateCartItem(event) {
     responseData.updatedCartData.newTotalPrice.toFixed(2)
 
 
-  if (responseData.updatedCartData.newTotalPrice === 0) {
+  if (responseData.updatedCartData.newTotalPrice <= 0) {
     buttonBuyProducts.style.display = 'none'
   }
 
