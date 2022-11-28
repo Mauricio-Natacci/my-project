@@ -1,5 +1,8 @@
 const Product = require('../models/product.model')
 const Order = require('../models/order.model')
+const aws = require('aws-sdk')
+
+const s3 = new aws.S3()
 
 async function getProducts(req, res, next) {
   try {
@@ -60,8 +63,18 @@ async function updateProduct(req, res, next) {
 
 async function deleteItem(req, res, next) {
   let product
+
+  product = await Product.findById(req.params.id)
+
+  var params = {
+    Bucket: 'myonlineshop0',
+    Key: product.image
+  }
+  s3.deleteObject(params, function (err, data) {
+    if (err) console.log(err, err.stack) // an error occurred
+    else console.log(data) // successful response
+  })
   try {
-    product = await Product.findById(req.params.id)
     await product.remove()
   } catch (error) {
     next(error)

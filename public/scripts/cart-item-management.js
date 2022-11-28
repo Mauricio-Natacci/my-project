@@ -1,6 +1,7 @@
 const updateButtons = document.querySelectorAll('.cart-item-management')
 const cartBadgeElement = document.querySelector('.nav__links .badge')
 const finalTotalPrice = document.getElementById('final-price')
+const buttonBuyProducts = document.getElementById('buy-products-button')
 
 async function updateCartItem(event) {
   event.preventDefault()
@@ -39,6 +40,7 @@ async function updateCartItem(event) {
 
   if (responseData.updatedCartData.updatedItemPrice === 0) {
     form.parentElement.parentElement.remove()
+    buttonBuyProducts.style.display = 'none'
   } else {
     const totalPriceElement = form.parentElement.querySelector(
       '.cart-item-total-price'
