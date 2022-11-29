@@ -137,3 +137,8 @@ li {
   border-radius: 10px;
   color: black;
 }
+
+.img-preview {
+  width: 20%;
+  border-radius: 10%;
+}

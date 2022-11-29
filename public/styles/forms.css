@@ -25,3 +25,12 @@ textarea {
   font-family: inherit;
   font-size: 20px;
 }
+
+#image-upload-control {
+  display: flex;
+  align-items: center;
+}
+
+#image-upload-control img {
+  display: none;
+}
