@@ -51,8 +51,12 @@ class Cart {
 
           this.totalQuantity = this.totalQuantity - item.quantity
           this.totalPrice = this.totalPrice - item.totalPrice
+
+          if (this.totalPrice <= 0) {
+            this.totalPrice = 0
+          }
           return { updatedItemPrice: 0 }
-        }
+        } 
       }
     }
   }
