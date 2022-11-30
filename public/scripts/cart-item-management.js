@@ -37,7 +37,6 @@ async function updateCartItem(event) {
   }
 
   const responseData = await response.json()
-  console.log(responseData)
 
   if (responseData.updatedCartData.updatedItemPrice === 0) {
     form.parentElement.parentElement.remove()
@@ -60,7 +59,6 @@ async function updateCartItem(event) {
     finalTotalPrice.textContent = 0
   }
 
-  
 }
 
 for (const updateButton of updateButtons) {
